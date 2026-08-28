@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score, classification_report
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from sklearn.preprocessing import LabelEncoder
 from xgboost import XGBClassifier
 
@@ -48,5 +48,5 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 
 print(f"Accuracy: {accuracy_score(y_test, y_pred):.4f}")
-print(f"Eval Matrix: {confusion_matrix(y_test, y_pred):.4f}")
+print(f"Confusion Matrix:\n{confusion_matrix(y_test, y_pred)}")
 print(classification_report(y_test, y_pred))
