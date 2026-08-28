@@ -48,4 +48,5 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 
 print(f"Accuracy: {accuracy_score(y_test, y_pred):.4f}")
+print(f"Eval Matrix: {confusion_matrix(y_test, y_pred):.4f}")
 print(classification_report(y_test, y_pred))
